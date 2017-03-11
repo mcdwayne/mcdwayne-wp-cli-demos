@@ -75,6 +75,20 @@ wp menu location assign my-menu primary
 # Let's go ahead and make that menu link to a known address (google in this case)
 wp menu item add-custom my-menu Google http://google.com 
 
+#Install the CIA Emoji widget
+ wp plugin install https://github.com/1dwaynemcdaniel/CIA-Emoji-WP-Plugin/archive/master.zip --activate
+ 
+# Set the CIA Emoji widget into the Home Sidebar
+wp widget add cia_emoji ps2
+
+# Set the background color to #BADA55
+wp theme mod set background_color BADA55
+
+# set the tagline to something else
+wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
+
+
+
 # Terminus commands 
 # terminus remote:wp wpclidemosite22.dev -- plugin update --all --dry-run
 # terminus remote:wp wpclidemosite22.dev -- theme update --all --dry-run
