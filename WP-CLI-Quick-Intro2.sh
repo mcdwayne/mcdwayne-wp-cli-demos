@@ -26,8 +26,8 @@ wp core download
 wp core config --dbname=c9 --dbuser=mcdwayne
 
 # run install 
-wp core install --url=
-1.c9users.io --title=WP-CLI_DEMO_Test --admin_user=dwayne --admin_password=Password1 --admin_email=dwayne@pantheon.io
+wp core install --url=wpcliexamplesite2.c9users.io --title=WP-CLI_DEMO_Test --admin_user=dwayne --admin_password=Password1 --admin_email=dwayne@pantheon.io
+
 
 # fix the links with search and replace
 wp search-replace '
