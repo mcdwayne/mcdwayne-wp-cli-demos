@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Name the site: wpcliexamplesite2
-
+# wpcliexamplesite2
 
 # install mysql (specific step for to C9, most of time this will already be installed)
 mysql-ctl install
@@ -28,15 +27,11 @@ wp core config --dbname=c9 --dbuser=mcdwayne
 # run install 
 wp core install --url=wpcliexamplesite2.c9users.io --title=WP-CLI_DEMO_Test --admin_user=dwayne --admin_password=Password1 --admin_email=dwayne@pantheon.io
 
-
 # fix the links with search and replace
-wp search-replace '
-1'  'wpcliexamplesite2-mcdwayne' 
+wp search-replace 'wpcliexamplesite2'  'wpcliexamplesite2-mcdwayne' 
 
-
-# create users with different roles
-wp user create bob bob@example.com --role=author
-wp user create jane jane@example.com --user_pass=“password” --role=administrator
+# Turn off the widgets.  All of them
+wp widget reset --all
 
 # generate some dummy posts
 wp post generate --count=15 --post_date=2001-01-01
@@ -44,6 +39,9 @@ wp post generate --count=15 --post_date=2001-01-01
 # even better let's pull down some LorIpsum filler text and make dummy posts with that
 curl loripsum.net/api/5/short/headers/ul/bq | wp post generate --post_content --count=5
 
+# create users with different roles
+wp user create bob bob@example.com --role=author
+wp user create jane jane@example.com --user_pass=“password” --role=administrator
 
 # Install a new theme
 wp theme install https://downloads.wordpress.org/theme/primer.1.3.0.zip 
@@ -61,6 +59,10 @@ wp plugin activate woocommerce
 # Let's install Jetpack and activate it
 wp plugin install jetpack --activate
 
+# wp plugin install wordfence duplicator
+
+# wp plugin install WHAT ARE YOUR FAVES?
+
 # What menus exist and are active?
 wp menu list
 
@@ -73,11 +75,8 @@ wp menu location assign my-menu primary
 # Let's go ahead and make that menu link to a known address (google in this case)
 wp menu item add-custom my-menu Google http://google.com 
 
-# Turn off the widgets.  All of them
-wp widget reset --all
-
-#Install the CIA Emoji widget plugin
-wp plugin install https://github.com/1dwaynemcdaniel/CIA-Emoji-WP-Plugin/archive/master.zip --activate
+#Install the CIA Emoji widget
+ wp plugin install https://github.com/1dwaynemcdaniel/CIA-Emoji-WP-Plugin/archive/master.zip --activate
  
 # Set the CIA Emoji widget into the Home Sidebar
 wp widget add cia_emoji ps2
@@ -87,6 +86,3 @@ wp theme mod set background_color BADA55
 
 # set the tagline to something else
 wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
-
-
-
