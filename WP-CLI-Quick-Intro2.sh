@@ -39,7 +39,7 @@ curl loripsum.net/api/5/short/headers/ul/bq | wp post generate --post_content --
 
 
 # Install a new theme
-wp theme install https://downloads.wordpress.org/theme/primer.1.3.0.zip --activate
+wp theme install universe --activate
 
 # let's make a new menu
 wp menu create "my-menu"
