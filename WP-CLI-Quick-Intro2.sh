@@ -30,8 +30,6 @@ wp core install --url=wpcliexamplesite2.c9users.io --title=WP-CLI_DEMO_Test --ad
 # fix the links with search and replace
 wp search-replace 'wpcliexamplesite2'  'wpcliexamplesite2-mcdwayne' 
 
-# Turn off the widgets.  All of them
-wp widget reset --all
 
 # generate some dummy posts
 wp post generate --count=15 --post_date=2001-01-01
@@ -39,32 +37,9 @@ wp post generate --count=15 --post_date=2001-01-01
 # even better let's pull down some LorIpsum filler text and make dummy posts with that
 curl loripsum.net/api/5/short/headers/ul/bq | wp post generate --post_content --count=5
 
-# create users with different roles
-wp user create bob bob@example.com --role=author
-wp user create jane jane@example.com --user_pass=“password” --role=administrator
 
 # Install a new theme
-wp theme install https://downloads.wordpress.org/theme/primer.1.3.0.zip 
-
-# Activate it
-wp theme activate primer
-
-# Let's install a new theme and go ahead and activate it
-wp theme install universal --activate
-
-# Let's install WooCommerce and activate it
-wp plugin install woocommerce
-wp plugin activate woocommerce
-
-# Let's install Jetpack and activate it
-wp plugin install jetpack --activate
-
-# wp plugin install wordfence duplicator
-
-# wp plugin install WHAT ARE YOUR FAVES?
-
-# What menus exist and are active?
-wp menu list
+wp theme install https://downloads.wordpress.org/theme/primer.1.3.0.zip --activate
 
 # let's make a new menu
 wp menu create "my-menu"
@@ -76,7 +51,7 @@ wp menu location assign my-menu primary
 wp menu item add-custom my-menu Google http://google.com 
 
 #Install the CIA Emoji widget
- wp plugin install https://github.com/1dwaynemcdaniel/CIA-Emoji-WP-Plugin/archive/master.zip --activate
+wp plugin install https://github.com/1dwaynemcdaniel/CIA-Emoji-WP-Plugin/archive/master.zip --activate
  
 # Set the CIA Emoji widget into the Home Sidebar
 wp widget add cia_emoji ps2
