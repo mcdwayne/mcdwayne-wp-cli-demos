@@ -39,7 +39,7 @@ curl loripsum.net/api/5/short/headers/ul/bq | wp post generate --post_content --
 
 
 # Install a new theme
-wp theme install universe --activate
+wp theme install universal --activate
 
 # let's make a new menu
 wp menu create "my-menu"
