@@ -122,12 +122,18 @@ wp menu item add-custom my-menu Google http://www.google.com
 # Turn off the widgets.  All of them.  
 wp widget reset --all
 
-#Install the CIA Emoji widget plugin
+# Install the CIA Emoji widget plugin
  wp plugin install https://github.com/1dwaynemcdaniel/CIA-Emoji-WP-Plugin/archive/master.zip --activate
  
 # Set the CIA Emoji widget into the Home Sidebar
 wp widget add cia_emoji ps2
 
+# -----Database-------
+# Let's export the current DB
+wp db export
+
+#DANGER: Resetting the DB!
+# wp db reset
 
 # Kalabox commands
 # kbox in front of anything
