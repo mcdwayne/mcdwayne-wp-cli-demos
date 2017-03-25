@@ -17,7 +17,7 @@ chmod +x wp-cli.phar
 # set file to path :$wp
 sudo mv wp-cli.phar /usr/local/bin/wp
 
-# WP-CLI is not installed!!!!
+# WP-CLI is now installed!!!!
 # Now, what do we do with it?
 
 # ------CORE------
