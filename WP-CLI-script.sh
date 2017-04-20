@@ -86,8 +86,8 @@ wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
 #------PLUGINS------#
 
 # Let's install WooCommerce and activate it
-wp plugin install woocommerce
-wp plugin activate woocommerce
+wp plugin install wordpress-seo
+wp plugin activate wordpress-seo
 
 wp plugin install wordfence duplicator --activate
 
