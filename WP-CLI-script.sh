@@ -62,12 +62,6 @@ wp user delete bob
 # List current themes
 wp theme list
 
-# Install a new theme
-wp theme install https://downloads.wordpress.org/theme/primer.1.3.0.zip 
-
-# Activate it
-wp theme activate primer
-
 # Let's install a new theme and go ahead and activate it
 wp theme install universal --activate
 
@@ -85,17 +79,19 @@ wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
 
 #------PLUGINS------#
 
-# Let's install WooCommerce and activate it
+# Let's install Yoast and activate it
 wp plugin install wordpress-seo
 wp plugin activate wordpress-seo
-
-wp plugin install wordfence duplicator --activate
 
 # Let's install an old versuon of Jetpack and activate it
 wp plugin install jetpack --version=4.3 --activate
 
-#nevermind, let's update it!
+#nevermind, I want the latest one.
+## Let's update it!
 wp plugin update jetpack
+
+# Update all the plugins!
+# wp plugin update --all 
 
 # wp plugin install WHAT ARE YOUR FAVES?
 
