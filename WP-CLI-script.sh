@@ -88,7 +88,11 @@ wp plugin install jetpack --version=4.3 --activate
 
 #nevermind, I want the latest one.
 ## Let's update it!
-wp plugin update jetpack
+### Wait, what version will this actually update to?
+wp plugin update jetpack --dry-run
+
+# I am good with that so let's actually do it:
+wp plugin update jetpack --dry-run
 
 # Update all the plugins!
 # wp plugin update --all 
