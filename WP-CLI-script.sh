@@ -34,8 +34,11 @@ wp core install --url=wpcliexamplesite1.c9users.io --title=WP-CLI_DEMO_Test --ad
 
 # ------SEARCH-AND-REPLACE------
 
-# fix the links with search and replace
+# fix the links with search and replace, well not yet
 wp search-replace 'wpcliexamplesite1'  'wpcliexamplesite1-mcdwayne' --dry-run
+
+# OK, now fix the links with search and replace
+wp search-replace 'wpcliexamplesite1'  'wpcliexamplesite1-mcdwayne'
 
 
 # ------POSTS------
