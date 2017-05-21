@@ -50,6 +50,9 @@ wp search-replace 'wpcliexamplesite1'  'wpcliexamplesite1-mcdwayne'
 # generate some dummy posts
 wp post generate --count=15 --post_date=2001-01-01
 
+# Let's delete these in one easy pass:
+# wp site empty
+
 # even better let's pull down some LorIpsum filler text and make dummy posts with that
 curl loripsum.net/api/5/short/headers/ul/bq | wp post generate --post_content --count=5
 
@@ -61,7 +64,7 @@ wp user create bob bob@example.com --role=author
 wp user create jane jane@example.com --user_pass=“password” --role=administrator
 
 # Delete Bob
-wp user delete bob 
+# wp user delete bob 
 
 
 # ------THEMES------
@@ -81,7 +84,6 @@ wp theme mod set background_color BADA55
 
 # set the tagline to something else
 wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
-
 
 
 #------PLUGINS------#
