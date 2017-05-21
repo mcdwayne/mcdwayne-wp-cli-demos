@@ -26,6 +26,10 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 wp core download
 
 # build the wp-config.php file
+# OK, but how do we do that?  Let's ask the WP-CLI to guide us via --prompt
+# wp core config --prompt
+
+# Since I am using C9 all I need are the following
 wp core config --dbname=c9 --dbuser=mcdwayne
 
 # run install 
