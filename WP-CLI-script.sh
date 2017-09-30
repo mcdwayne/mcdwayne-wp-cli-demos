@@ -23,57 +23,91 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 # ------CORE------
 
 #  download WordPress
-wp core download
+# NOW NORMALLY it is just 
+# wp core download
+
+# But currently, on some linux systems (like C9.io) with permissions around en_US locale, need to use....
+wp --allow-root core download --locale=en_GB 
 
 # build the wp-config.php file
 # OK, but how do we do that?  Let's ask the WP-CLI to guide us via --prompt
 # wp core config --prompt
 
-# Since I am using C9 all I need are the following
+# Well actually, since I am using C9 all I need are the following
 wp core config --dbname=c9 --dbuser=mcdwayne
 
-# run install 
+# Run install 
 wp core install --url=wpcliexamplesite1.c9users.io --title=WP-CLI_DEMO_Test --admin_user=dwayne --admin_password=Password1 --admin_email=dwayne@pantheon.io
 
 
-# ------SEARCH-AND-REPLACE------
+# ------SEARCH-REPLACE------
 
-# fix the links with search and replace, well not yet
+# Fix the links with search and replace, well not yet
 wp search-replace 'wpcliexamplesite1'  'wpcliexamplesite1-mcdwayne' --dry-run
 
 # OK, now fix the links with search and replace
 wp search-replace 'wpcliexamplesite1'  'wpcliexamplesite1-mcdwayne'
 
+# Let's not make changes to our live DB, instead pipe those changes to a new DB copy
+wp search-replace 'wpcliexamplesite1'  'wpcliexamplesite1-mcdwayne' --export > mysqldump.sql
 
-# ------POSTS------
 
-# generate some dummy posts
+# ------POST------
+
+# Generate some dummy posts
 wp post generate --count=15 --post_date=2001-01-01
+
+# Even better let's pull down some LorIpsum filler text and make dummy posts with that
+curl loripsum.net/api/5/short/headers/ul/bq | wp post generate --post_content --count=5
+
+# Let's see what posts exists, and what metadata is exposed
+wp post list 
+
+# Let's pipe that into a CSV file
+wp post list --format=csv > postlist.csv
+
+# and of course we can delete posts, just need the post ID which we know from our list
+wp post delete 1
 
 # Let's delete these in one easy pass:
 # wp site empty
 
-# even better let's pull down some LorIpsum filler text and make dummy posts with that
-curl loripsum.net/api/5/short/headers/ul/bq | wp post generate --post_content --count=5
+# ------USER------
 
-
-# ------USERS------
-
-# create users with different roles
+# Create users with different roles
+# First, let WP create our password (good idea)
 wp user create bob bob@example.com --role=author
-wp user create jane jane@example.com --user_pass=“password” --role=administrator
 
-# Delete Bob
+# We can set the password if we are using variables from another login system
+wp user create jane jane@example.com --user_pass=${password} --role=administrator
+
+# See our user list
+wp user list
+
+# Get some additional data about a specific user by ID
+wp user get 3
+
+# Let's give Bob another role as well.  Roles are here: https://codex.wordpress.org/Roles_and_Capabilities
+wp user add-role bob editor
+
+# We can even modify a roles' capabilities, but let's not got too crazy yet...
+# wp cap add 'author' 'spectate'
+
+# I no longer want Bob as a user. Delete Bob.
+# We do need to decide what to do with his posts though. 
 # wp user delete bob 
 
 
-# ------THEMES------
+# ------THEME------
 
 # List current themes
 wp theme list
 
-# Let's install a new theme and go ahead and activate it
-wp theme install universal --activate
+# Let's install a new theme
+wp theme install universal 
+
+#And go ahead and activate it
+wp theme activate universal
 
 # We can create our own child themes pretty quickly
 wp scaffold child-theme universal_child_theme --parent_theme=universal --activate
@@ -82,15 +116,13 @@ wp scaffold child-theme universal_child_theme --parent_theme=universal --activat
 # Set the background color to #BADA55
 wp theme mod set background_color BADA55
 
-# set the tagline to something else
-wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
+# Let's delete everything I am not using (just the parent and child themes left alone)
+wp theme delete twentysixteen twentyseventeen twentyfifteen
 
-
-#------PLUGINS------#
+#------PLUGIN------#
 
 # Let's install Yoast and activate it
-wp plugin install wordpress-seo
-wp plugin activate wordpress-seo
+wp plugin install wordpress-seo --activate
 
 # Let's install an old versuon of Jetpack and activate it
 wp plugin install jetpack --version=4.3 --activate
@@ -101,17 +133,30 @@ wp plugin install jetpack --version=4.3 --activate
 wp plugin update jetpack --dry-run
 
 # I am good with that so let's actually do it:
-wp plugin update jetpack --dry-run
+wp plugin update jetpack
 
 # Update all the plugins!
 # wp plugin update --all 
 
-# wp plugin install WHAT ARE YOUR FAVES?
+# Want to make your own plugin the right way?  
+wp scaffold plugin newplugin
 
 
+# -----Database--------
+# Let's export the current DB
+wp db export newbackup.sql
+
+#DANGER: Resetting the DB!
+# wp db reset
+
+# Importing works too
+# wp db import newbackup.sql
 
 
-#------Menus------#
+#----Other Commands---!!!!!!!
+
+
+#------Menu------#
 
 # What menus exist and are active?
 wp menu list
@@ -126,7 +171,7 @@ wp menu location assign my-menu primary
 wp menu item add-custom my-menu Google http://www.google.com 
 
 
-# ------WIDGETS------
+# ------WIDGET------
 
 # Turn off the widgets.  All of them.  
 wp widget reset --all
@@ -137,12 +182,11 @@ wp widget reset --all
 # Set the CIA Emoji widget into the Home Sidebar
 wp widget add cia_emoji ps2
 
-# -----Database-------
-# Let's export the current DB
-wp db export
 
-#DANGER: Resetting the DB!
-# wp db reset
+# ------OPTION------
+
+# set the tagline to something that is not "Just another WordPress website"
+wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
 
 # Kalabox commands
 # kbox in front of anything
