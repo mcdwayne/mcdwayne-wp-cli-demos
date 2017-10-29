@@ -37,7 +37,7 @@ wp --allow-root core download --locale=en_GB
 wp core config --dbname=c9 --dbuser=mcdwayne
 
 # Run install 
-wp core install --url=wpcliexamplesite1.c9users.io --title=WP-CLI_DEMO_Test --admin_user=dwayne --admin_password=Password1 --admin_wp_email=dwayne@pantheon.io
+wp core install --url=wpcliexamplesite1.c9users.io --title=WP-CLI_DEMO_Test --admin_user=dwayne --admin_password=Password1 --admin_email=dwayne@pantheon.io
 
 
 # ------SEARCH-REPLACE------
@@ -91,7 +91,7 @@ wp user get 3
 wp user add-role bob editor
 
 # We can even modify a roles' capabilities, but let's not got too crazy yet...
-# wp cap add 'author' 'spectate'
+# wp cap add 'author' 'activate_plugins'
 
 # I no longer want Bob as a user. Delete Bob.
 # We do need to decide what to do with his posts though. 
