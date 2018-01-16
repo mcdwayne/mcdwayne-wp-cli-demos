@@ -23,13 +23,9 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 # ------CORE------
 
 #  download WordPress
-# NOW NORMALLY it is just 
-# wp core download
+wp core download
 
-# But currently, on some linux systems (like C9.io) with permissions around en_US locale, need to use....
-wp --allow-root core download --locale=en_GB 
-
-# build the wp-config.php file
+# Next, build the wp-config.php file
 # OK, but how do we do that?  Let's ask the WP-CLI to guide us via --prompt
 # wp core config --prompt
 
@@ -50,6 +46,9 @@ wp search-replace 'wpcliexamplesite1'  'wpcliexamplesite1-mcdwayne'
 
 # Let's not make changes to our live DB, instead pipe those changes to a new DB copy
 wp search-replace 'wpcliexamplesite1'  'wpcliexamplesite1-mcdwayne' --export > mysqldump.sql
+
+#  Hey, this isn't just another WordPress site, this is my WP-CLI demo site just for you at WordCamp!
+wp search-replace "Just another WordPress site" "The best darn demo site at WordCamp Albuquerque!"
 
 
 # ------POST------
