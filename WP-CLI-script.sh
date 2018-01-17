@@ -203,6 +203,8 @@ wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
 # $ vim /usr/local/etc/php/7.0/php.ini
 # Enter command mode, then type /memory_limit
 # memory_limit = 512M
+# Install Composer
+# curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 # Now we can actually add the latest scaffold package release
 # wp package install git@github.com:wp-cli/scaffold-command.git
 # wp package install git@github.com:wp-cli/admin-command.git
