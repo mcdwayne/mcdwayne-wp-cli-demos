@@ -205,4 +205,6 @@ wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
 # memory_limit = 512M
 # Now we can actually add the latest scaffold package release
 # wp package install git@github.com:wp-cli/scaffold-command.git
+# wp package install git@github.com:wp-cli/admin-command.git
+
 
