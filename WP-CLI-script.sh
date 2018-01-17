@@ -194,4 +194,15 @@ wp option update blogdescription "Thanks for watching my demo of WP-CLI!"
 # terminus remote:wp disruptmusicpodcast.dev -- plugin list
 # terminus remote:wp disruptmusicpodcast.dev -- theme list
 
+# Worksround for installing scaffold package without running into memory liit issue with composer
+# Find your php.ini for PHP-CLI
+# $ php -i | grep php.ini
+# Configuration File (php.ini) Path => /usr/local/etc/php/7.0
+# Loaded Configuration File => /usr/local/etc/php/7.0/php.ini
+# Increase memory_limit to 512M or greater
+# $ vim /usr/local/etc/php/7.0/php.ini
+# Enter command mode, then type /memory_limit
+# memory_limit = 512M
+# Now we can actually add the latest scaffold package release
+# wp package install git@github.com:wp-cli/scaffold-command.git
 
