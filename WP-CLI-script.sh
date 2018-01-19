@@ -155,8 +155,11 @@ wp db export newbackup.sql
 #----Other Commands---!!!!!!!
 
 #------Language------#
+# What languages can we install?
+wp language core list
+
 # Let's flip the site's language over to Dutch
-wp language core install nl_NL
+wp language core install nl_NL --activate
 
 # Let's check to see what languages we have installed
 wp language core list --status=installed
