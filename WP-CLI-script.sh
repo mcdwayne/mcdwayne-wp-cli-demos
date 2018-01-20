@@ -121,7 +121,7 @@ wp theme delete twentysixteen twentyseventeen twentyfifteen
 #------PLUGIN------#
 
 # Let's install Yoast and activate it
-wp plugin install wordpress-seo --activate
+wp plugin install gutenberg --activate
 
 # Let's install an old versuon of Jetpack and activate it
 wp plugin install jetpack --version=4.3 --activate
