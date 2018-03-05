@@ -59,9 +59,6 @@ wp theme install 90s-retro --activate
 # We could have also activated it seperately
 # wp theme activate 90s-retro 
 
-# We can create our own child themes pretty quickly
-# wp scaffold child-theme 2016-child --parent_theme=twentysixteen
-
 # We can also modify the theme settings
 # Set the background color to #BADA55
 wp theme mod set background_color BADA55
@@ -89,20 +86,6 @@ wp post delete 1
 
 # Let's delete these in one easy pass:
 # wp site empty
-
-# OK, let's make this a bit more interesting
-# but first we need a plugin:
-wp plugin install blackjack-lite --activate
-
-
-# now create a post with the short tag for that plugin capability
-wp post create --post_content=' [blackjack] ' --post_status=publish
-
-# AGAIN!  
-wp plugin install magic-food --activate
-wp post create --post_content=' [magicfood] ' --post_status=publish
-
-
 
 
 #------Menu------#
@@ -145,8 +128,19 @@ wp plugin update jetpack
 # Update all the plugins!
 # wp plugin update --all 
 
-# Want to make your own plugin the right way?  
-wp scaffold plugin newplugin
+# OK, let's make this a bit more interesting
+# but first we need a plugin:
+wp plugin install blackjack-lite --activate
+
+# now create a post with the short tag for that plugin capability
+wp post create --post_content=' [blackjack] ' --post_status=publish
+
+# AGAIN but with an even different game!  
+wp plugin install magic-food --activate
+wp post create --post_title='Magic Food'  --post_content=' [magicfood] ' --post_status=publish
+
+
+
 
 
 
@@ -176,16 +170,32 @@ wp user add-role bob editor
 # wp user delete bob 
 
 
-
 # -----Database--------
 # Let's export the current DB
 wp db export newbackup.sql
 
+
 #DANGER: Resetting the DB!
 # wp db reset
 
+
 # Importing works too
 # wp db import newbackup.sql
+
+
+# ------SCAFFOLD----
+# https://developer.wordpress.org/cli/commands/scaffold/
+
+# We can create our own child themes pretty quickly
+wp scaffold child-theme 2016-child --parent_theme=twentysixteen
+
+
+# Want to make your own plugin the right way?  
+wp scaffold plugin newplugin
+
+# Want to get your plugin Gutenberg ready?  Scaffold the Block folders
+wp scaffold block magic-food-block --title="Magic Food block" --plugin=magic-food
+
 
 
 # ------OPTION------
