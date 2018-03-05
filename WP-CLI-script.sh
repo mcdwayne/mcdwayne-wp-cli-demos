@@ -20,10 +20,11 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 # ------CORE------
 
 #  download WordPress
-# NOW NORMALLY it is just 
 wp core download
 
 # build the wp-config.php file
+
+
 # OK, but how do we do that?  Let's ask the WP-CLI to guide us via --prompt
 # wp core config --prompt
 
@@ -31,6 +32,7 @@ wp core download
 wp core config --dbname=mysql --dbuser=root
 
 # Run install 
+
 wp core install --url=http://wp-cli-1dwaynemcdaniel657003.codeanyapp.com/ --title=WP-CLI --admin_user=dwayne --admin_password=Password1 --admin_email=1dwayne.mcdaniel@gmail.com
 
 
@@ -66,6 +68,9 @@ wp theme mod set background_color BADA55
 # Let's delete everything I am not using (just the parent and child themes left alone)
 wp theme delete twentyseventeen twentyfifteen
 
+#  Hey, this isn't just another WordPress site, this is my WP-CLI demo site just for you at WordCamp!
+wp search-replace "Just another WordPress site" "The best darn demo site at WordCamp Albuquerque!"
+
 
 # ------POST------
 
@@ -86,6 +91,32 @@ wp post delete 1
 
 # Let's delete these in one easy pass:
 # wp site empty
+
+
+# ------USER------
+
+# Create users with different roles
+# First, let WP create our password (good idea)
+wp user create bob bob@example.com --role=author
+
+# We can set the password if we are using variables from another login system
+wp user create jane jane@example.com --user_pass=${password} --role=administrator
+
+# See our user list
+wp user list
+
+# Get some additional data about a specific user by ID
+wp user get 3
+
+# Let's give Bob another role as well.  Roles are here: https://codex.wordpress.org/Roles_and_Capabilities
+wp user add-role bob editor
+
+# We can even modify a roles' capabilities, but let's not got too crazy yet...
+# wp cap add 'author' 'activate_plugins'
+
+# I no longer want Bob as a user. Delete Bob.
+# We do need to decide what to do with his posts though. 
+# wp user delete bob 
 
 
 #------Menu------#
@@ -110,9 +141,11 @@ wp menu item add-custom my-menu Email mailto:1dwayne.mcdaniel@gmail.com
 
 #------PLUGIN------#
 
-# Let's install Yoast and activate it
+# Let's install wp-cfm and activate it
 wp plugin install wp-cfm --activate
 
+#  Might as well get Gutenberg too :)
+wp plugin install gutenberg --activate
 
 # Let's install an old versuon of Jetpack and activate it
 wp plugin install jetpack --version=4.3 --activate
@@ -183,8 +216,13 @@ wp db export newbackup.sql
 # wp db import newbackup.sql
 
 
+
+#----OTHER COOL Stuff------
+
+
 # ------SCAFFOLD----
 # https://developer.wordpress.org/cli/commands/scaffold/
+
 
 # We can create our own child themes pretty quickly
 wp scaffold child-theme 2016-child --parent_theme=twentysixteen
@@ -195,6 +233,18 @@ wp scaffold plugin newplugin
 
 # Want to get your plugin Gutenberg ready?  Scaffold the Block folders
 wp scaffold block magic-food-block --title="Magic Food block" --plugin=magic-food
+
+
+
+#------Language------#
+# What languages can we install?
+wp language core list
+
+# Let's flip the site's language over to Dutch
+wp language core install nl_NL --activate
+
+# Let's check to see what languages we have installed
+wp language core list --status=installed
 
 
 
