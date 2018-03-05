@@ -64,6 +64,9 @@ curl http://baseballipsum.apphb.com/api/?paras=10 | wp post generate --post_cont
 
 #------Menu------#
 
+# let's make a new menu
+wp menu create "my-menu"
+
 # let's make that the primary menu
 wp menu location assign my-menu main-menu
 
