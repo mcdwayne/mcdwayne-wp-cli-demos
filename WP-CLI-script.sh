@@ -2,6 +2,8 @@
 
 # wpcliexamplesite1
 
+#  (Almost) Everything is from http://wp-cli.org/
+
 # Download the WP-CLI
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
@@ -19,6 +21,8 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 
 # ------CORE------
 
+# https://developer.wordpress.org/cli/commands/core/
+
 #  download WordPress
 wp core download
 
@@ -35,6 +39,8 @@ wp core install --url=http://wp-cli-1dwaynemcdaniel657003.codeanyapp.com/ --titl
 
 # ------SEARCH-REPLACE------
 
+# https://developer.wordpress.org/cli/commands/search-replace/
+
 # Fix the links with search and replace, well not yet
 wp search-replace 'Hello world'  'This is the first demo post' --dry-run
 
@@ -48,6 +54,8 @@ wp search-replace 'Just another WordPress site'  'WCMIA ROCKS!!!!!' --precise
 wp search-replace 'http://wp-cli-demo-box-1dwaynemcdaniel657003.codeanyapp.com/'  'https://testsite.com' --export > mysqldump.sql
 
 # ------THEME------
+
+# https://developer.wordpress.org/cli/commands/theme/
 
 # List current themes
 wp theme list
@@ -67,6 +75,8 @@ wp theme delete twentyseventeen twentyfifteen
 
 
 # ------POST------
+
+# https://developer.wordpress.org/cli/commands/post/
 
 # Generate some dummy posts
 wp post generate --count=15 --post_date=2001-01-01
@@ -91,6 +101,9 @@ wp post delete 2
 
 #------Menu------#
 
+# https://developer.wordpress.org/cli/commands/menu/
+
+
 # What menus exist and are active?
 wp menu list
 
@@ -111,6 +124,8 @@ wp menu item add-custom my-menu Email mailto:1dwayne.mcdaniel@gmail.com
 
 
 #------PLUGIN------#
+
+# https://developer.wordpress.org/cli/commands/plugin/
 
 # Let's install wp-cfm and activate it
 wp plugin install wp-cfm --activate
@@ -134,17 +149,20 @@ wp plugin update jetpack
 
 # OK, let's make this a bit more interesting
 # but first we need a plugin:
-wp plugin install blackjack-lite --activate
+wp plugin install magic-food --activate
 
 # now create a post with the short tag for that plugin capability
-wp post create --post_content=' [blackjack] ' --post_status=publish
+wp post create --post_title='Magic Food'  --post_content=' [magicfood] ' --post_status=publish
 
 # AGAIN but with an even different game!  
-wp plugin install magic-food --activate
-wp post create --post_title='Magic Food'  --post_content=' [magicfood] ' --post_status=publish
+wp plugin install blackjack-lite --activate
+wp post create --post_content=' [blackjack] ' --post_status=publish
+
 
 
 # ------USER------
+
+# https://developer.wordpress.org/cli/commands/user/
 
 # Create users with different roles
 # First, let WP create our password (good idea)
@@ -171,6 +189,9 @@ wp user add-role bob editor
 
 
 # -----Database--------
+
+# https://developer.wordpress.org/cli/commands/db/
+
 # Let's export the current DB
 wp db export newbackup.sql
 
@@ -204,6 +225,9 @@ wp scaffold block magic-food-block --title="Magic Food block" --plugin=magic-foo
 
 
 #------Language------#
+
+
+
 # What languages can we install?
 wp language core list
 
