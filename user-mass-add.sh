@@ -19,7 +19,7 @@ IFS=,
 # 	wp_email is the email you want to use for wp-admin
 # 	pantheon_email is the email for the end users' Pantheon account
 # 	lastname is not actually used but is fille data to safeguard against nasty EOL funkiness
-while read  firstname lastname email 
+while read  timestamp firstname email otherdata
 do
 	# Note: only reason I am echoing this is to build another script to do this at scale.  
 	# If run as just Terminus commands in loop, it stops after first row for some reason.
