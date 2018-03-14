@@ -220,7 +220,7 @@ wp scaffold child-theme 2016-child --parent_theme=twentysixteen
 wp scaffold plugin newplugin
 
 # Want to get your plugin Gutenberg ready?  Scaffold the Block folders
-wp scaffold block magic-food-block --title="Magic Food block" --plugin=magic-food
+wp scaffold block blackjack-lite-block --title="blackjack-lite-block" --plugin=blackjack-lite
 
 
 
