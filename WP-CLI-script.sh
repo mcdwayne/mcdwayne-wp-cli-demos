@@ -192,7 +192,7 @@ wp user add-role bob editor
 
 # https://developer.wordpress.org/cli/commands/db/
 
-# What tables de we got here?
+# What tables do we got here?
 wp db tables
 
 # Let's export the current DB
