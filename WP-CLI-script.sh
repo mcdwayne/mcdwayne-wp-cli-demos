@@ -192,17 +192,21 @@ wp user add-role bob editor
 
 # https://developer.wordpress.org/cli/commands/db/
 
+# What tables de we got here?
+wp db tables
+
 # Let's export the current DB
 wp db export newbackup.sql
+
+# I really want to get into my MySQL command line for some reason
+# wp db cli
 
 
 #DANGER: Resetting the DB!
 # wp db reset
 
-
 # Importing works too
 # wp db import newbackup.sql
-
 
 
 #----OTHER COOL Stuff------
