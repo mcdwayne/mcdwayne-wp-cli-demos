@@ -34,3 +34,9 @@ done < $INPUT
 
 # after the loop, reset the Internal File Sperator to whatever it was before
 IFS=$OLDIFS
+
+
+# Display the user names ONLY from user list
+echo The users are now: 
+wp user list --field=display_name
+
