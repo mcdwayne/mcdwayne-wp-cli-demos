@@ -24,7 +24,9 @@ do
 	# Note: only reason I am echoing this is to build another script to do this at scale.  
 	# If run as just Terminus commands in loop, it stops after first row for some reason.
 
-wp user create ${firstname} ${email} --role=administrator
+wp user create ${firstname} ${email} --role=administrator --quiet
+
+wp comment create --comment_post_ID=22 --comment_content=${otherdata} --comment_author=${firstname} --quiet
 
 
 # if we are not at the end of the file, we are not done, loop again
