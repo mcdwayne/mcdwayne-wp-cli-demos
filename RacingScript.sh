@@ -43,7 +43,7 @@ wp post create --post_title='Magic Food'  --post_content=' [magicfood] ' --post_
 
 wp plugin install blackjack-lite --activate
 
-wp post create --post_content=' [blackjack] ' --post_status=publish
+wp post create --post_title='Blackjack' --post_content=' [blackjack] ' --post_status=publish
 
 wp language core install  zh_HK --activate
 
