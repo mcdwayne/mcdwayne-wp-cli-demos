@@ -96,7 +96,8 @@ wp post delete 3 4 5 6 7
 # Let's delete these in one easy pass:
 # wp site empty
 
-
+# Let's a modified postit.sh script to curl in a doc on github and parce and then post it to my site
+# ./postit.sh https://raw.githubusercontent.com/mcdwayne/mcdwayne-wp-cli-demos/master/demo-post
 
 
 #------Menu------#
