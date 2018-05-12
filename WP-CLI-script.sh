@@ -79,7 +79,7 @@ wp theme delete twentyseventeen twentyfifteen
 # https://developer.wordpress.org/cli/commands/post/
 
 # Generate some dummy posts
-wp post generate --count=15 --post_date=2001-01-01
+# wp post generate --count=15 --post_date=2001-01-01
 
 # Even better let's pull down some LorIpsum filler text and make dummy posts with that
 curl http://baseballipsum.apphb.com/api/?paras=10 | wp post generate --post_content --count=5
@@ -91,7 +91,7 @@ wp post list
 wp post list --format=csv > postlist.csv
 
 # and of course we can delete posts, just need the post ID which we know from our list
-wp post delete 2
+wp post delete 3 4 5 6 7
 
 # Let's delete these in one easy pass:
 # wp site empty
