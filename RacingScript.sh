@@ -14,9 +14,9 @@ wp core config --dbname=mysql --dbuser=root
 
 wp core install --url=http://wp-cli-1dwaynemcdaniel657003.codeanyapp.com/ --title=WP-CLI --admin_user=dwayne --admin_password=Password1 --admin_email=1dwayne.mcdaniel@gmail.com
 
-wp search-replace 'Hello world'  'This is the first demo post'
+wp search-replace 'Hello world'  'What is your favorite talk so far?'
 
-wp search-replace 'Just another WordPress site'  'WCMIA ROCKS!!!!!' --precise
+wp search-replace 'Just another WordPress site'  'WCSTL ROCKS!!!!!' --precise
 
 wp theme install 90s-retro --activate
 
