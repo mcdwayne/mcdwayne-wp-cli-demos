@@ -36,12 +36,9 @@ wp menu item add-custom my-menu Google https://www.google.com
 
 wp menu item add-custom my-menu Email mailto:1dwayne.mcdaniel@gmail.com
 
-wp plugin install gutenberg --activate
+wp plugin install gutenberg magic-food blackjack-lite --activate
 
-wp plugin install magic-food --activate
 wp post create --post_title='Magic Food'  --post_content=' [magicfood] ' --post_status=publish
-
-wp plugin install blackjack-lite --activate
 
 wp post create --post_title='Blackjack' --post_content=' [blackjack] ' --post_status=publish
 
