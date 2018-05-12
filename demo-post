@@ -9,7 +9,7 @@ This Is A Demo Post for WCSTL
 <!-- /wp:paragraph -->
 
 <!-- wp:preformatted -->
-<pre class="wp-block-preformatted">But first here is a pic of a dog:<br/><img src="https://previews.123rf.com/images/vauvau/vauvau1608/vauvau160801570/65740437-nice-brown-mutt-dog-sitting-in-dark-studio.jpg" width="411" height="411"/><br/></pre>
+<pre class="wp-block-preformatted">But first here is a pic of a dog:      <br/><br/><br/><img src="https://previews.123rf.com/images/vauvau/vauvau1608/vauvau160801570/65740437-nice-brown-mutt-dog-sitting-in-dark-studio.jpg" width="411" height="411"/><br/></pre>
 <!-- /wp:preformatted -->
 
 <!-- wp:paragraph -->
