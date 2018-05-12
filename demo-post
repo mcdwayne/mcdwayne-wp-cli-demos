@@ -1,16 +1,29 @@
 This Is A Demo Post for WCSTL
 
-##Greetings to all of you in the audience, you are all so awesome
+<!-- wp:heading -->
+<h3>Greetings to all of you in the audience, you are all so awesome</h3>
+<!-- /wp:heading -->
 
-##Below is some ipsum from [Veggie Ipsum](http://veggieipsum.com/)
+<!-- wp:paragraph -->
+<p>Below is some ipsum from <a href="http://veggieipsum.com/">Veggie Ipsum</a> <br/></p>
+<!-- /wp:paragraph -->
 
-###But first 
-####here is a pic of a dog:
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">But first here is a pic of a dog:<br/><img src="https://previews.123rf.com/images/vauvau/vauvau1608/vauvau160801570/65740437-nice-brown-mutt-dog-sitting-in-dark-studio.jpg" width="411" height="411"/><br/></pre>
+<!-- /wp:preformatted -->
 
-![picute of a brown mutt dog sitting in the dark](https://previews.123rf.com/images/vauvau/vauvau1608/vauvau160801570/65740437-nice-brown-mutt-dog-sitting-in-dark-studio.jpg)
+<!-- wp:paragraph -->
+<p>And a tweet from earlier</p>
+<!-- /wp:paragraph -->
 
+<!-- wp:embed {"url":"https://twitter.com/nathaningram/status/995358053150097409","type":"rich","providerNameSlug":"twitter"} -->
+<figure class="wp-block-embed is-type-rich is-provider-twitter">
+	https://twitter.com/nathaningram/status/995358053150097409
+</figure>
+<!-- /wp:embed -->
 
-Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+<!-- wp:preformatted -->
+<pre class="wp-block-preformatted">Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
 
 Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
 
@@ -24,4 +37,5 @@ Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra 
 
 Beetroot water spinach okra water chestnut ricebean pea catsear courgette summer purslane. Water spinach arugula pea tatsoi aubergine spring onion bush tomato kale radicchio turnip chicory salsify pea sprouts fava bean. Dandelion zucchini burdock yarrow chickpea dandelion sorrel courgette turnip greens tigernut soybean radish artichoke wattle seed endive groundnut broccoli arugula.
 
-Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. Catsear cauliflower garbanzo yarrow salsify chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra leone bologi rutabaga tigernut. Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce broccoli celery lotus root carrot winter purslane turnip greens garlic. Jícama garlic courgette coriander radicchio plantain scallion cauliflower fava bean desert raisin spring onion chicory bunya nuts. Sea lettuce water spinach gram fava bean leek dandelion silver beet eggplant bush tomato.
+Soko radicchio bunya nuts gram dulse silver beet parsnip napa cabbage lotus root sea lettuce brussels sprout cabbage. Catsear cauliflower garbanzo yarrow salsify chicory garlic bell pepper napa cabbage lettuce tomato kale arugula melon sierra leone bologi rutabaga tigernut. Sea lettuce gumbo grape kale kombu cauliflower salsify kohlrabi okra sea lettuce broccoli celery lotus root carrot winter purslane turnip greens garlic. Jícama garlic courgette coriander radicchio plantain scallion cauliflower fava bean desert raisin spring onion chicory bunya nuts. Sea lettuce water spinach gram fava bean leek dandelion silver beet eggplant bush tomato.</pre>
+<!-- /wp:preformatted -->
